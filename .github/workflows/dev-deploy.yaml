@@ -15,7 +15,6 @@ jobs:
       IMAGE_NAME: dev # repository inside ACR
       IMAGE_TAG: latest
       APP_NAME: edrv-n8n-dev
-      DOCKERFILE_PATH: docker/images/n8n
       RG_NAME: n8n-resources
 
     steps:
@@ -52,7 +51,7 @@ jobs:
 
       - name: Build & push image
         run: |
-          docker build -f ./$DOCKERFILE_PATH/Dockerfile -t $REGISTRY_SERVER/$IMAGE_NAME:$IMAGE_TAG .
+          docker build -t $REGISTRY_SERVER/$IMAGE_NAME:$IMAGE_TAG .
           docker push $REGISTRY_SERVER/$IMAGE_NAME:$IMAGE_TAG
 
       - name: Restart App Service
