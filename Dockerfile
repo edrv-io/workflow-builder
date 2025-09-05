@@ -57,5 +57,3 @@ EXPOSE map[5678/tcp:{}]
 USER node
 
 ENTRYPOINT ["tini" "--" "/docker-entrypoint.sh"]
-
-LABEL org.opencontainers.image.title=n8n org.opencontainers.image.description=Workflow Automation Tool org.opencontainers.image.source=https://github.com/n8n-io/n8n org.opencontainers.image.url=https://n8n.io org.opencontainers.image.version=1.108.2
