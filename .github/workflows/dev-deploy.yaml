@@ -48,11 +48,31 @@ jobs:
           registry: ${{ env.REGISTRY_SERVER }}
           username: 00000000-0000-0000-0000-000000000000 # literal value per ACR docs
           password: ${{ steps.acr_token.outputs.token }}
+      
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
+      - run: corepack enable
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm build:n8n
 
-      - name: Build & push image
-        run: |
-          docker build -t $REGISTRY_SERVER/$IMAGE_NAME:$IMAGE_TAG .
-          docker push $REGISTRY_SERVER/$IMAGE_NAME:$IMAGE_TAG
+      # — Build & push using the official Dockerfile path —
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: ./docker/images/n8n/Dockerfile
+          platforms: linux/amd64
+          push: true
+          tags: |
+            ${{ env.REGISTRY_SERVER }}/${{ env.IMAGE_NAME }}:${{ env.IMAGE_TAG }}
+            ${{ env.REGISTRY_SERVER }}/${{ env.IMAGE_NAME }}:latest
+          build-args: |
+            NODE_VERSION=22
+            N8N_VERSION=snapshot
+            N8N_RELEASE_TYPE=dev
+          cache-from: type=gha
+          cache-to:   type=gha,mode=max
 
       - name: Restart App Service
         uses: azure/cli@v2
