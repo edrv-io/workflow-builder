@@ -48,15 +48,15 @@ jobs:
           registry: ${{ env.REGISTRY_SERVER }}
           username: 00000000-0000-0000-0000-000000000000 # literal value per ACR docs
           password: ${{ steps.acr_token.outputs.token }}
-      
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-          cache: 'pnpm'
 
       - uses: pnpm/action-setup@v4     # installs pnpm into PATH
         with:
           run_install: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'pnpm'
       - run: pnpm install --frozen-lockfile
       - run: pnpm build:n8n
 
