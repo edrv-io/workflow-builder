@@ -525,12 +525,13 @@
 	--grid-row-selected-background: var(--p-color-secondary-720);
 }
 
-body[data-theme='dark'] {
-	@include theme;
-}
+// body[data-theme='dark'] {
+// 	@include theme;
 
-@media (prefers-color-scheme: dark) {
-	body:not([data-theme]) {
-		@include theme;
-	}
-}
+// }
+
+// @media (prefers-color-scheme: dark) {
+// 	body:not([data-theme]) {
+// 		@include theme;
+// 	}
+// }

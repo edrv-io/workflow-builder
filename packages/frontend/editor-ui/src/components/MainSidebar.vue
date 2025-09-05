@@ -431,6 +431,7 @@ onClickOutside(createBtn as Ref<VueInstance>, () => {
 		</div>
 		<div :class="$style.logo">
 			<Logo
+				style="width: 100%"
 				location="sidebar"
 				:collapsed="isCollapsed"
 				:release-channel="settingsStore.settings.releaseChannel"

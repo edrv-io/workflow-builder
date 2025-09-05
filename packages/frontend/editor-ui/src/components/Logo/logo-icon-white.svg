@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="60" id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 161.16 46.32">
+<svg width="50" id="Calque_1" data-name="Calque 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 161.16 46.32">
   <defs>
     <style>
       .cls-1 {
-        fill: #221b4a;
+        fill: #fff;
       }
 
       .cls-1, .cls-2 {
