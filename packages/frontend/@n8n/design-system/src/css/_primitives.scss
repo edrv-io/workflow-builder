@@ -39,17 +39,31 @@
 	--p-white-a-010: hsla(var(--h-gray), 50%, 100%, 0.1);
 
 	// Primary color
-	--h-primary: 7;
-	--s-primary: 100%;
-	--l-primary: 68%;
+	--h-primary: 249;
+	--s-primary: 47%;
+	--l-primary: 20%;
 
-	--p-color-primary-420: hsl(7, 85%, 58%);
-	--p-color-primary-320: hsl(7, 100%, 68%); // Base
-	--p-color-primary-220: hsl(7, 100%, 78%);
-	--p-color-primary-120: hsl(7, 100%, 88%);
-	--p-color-primary-070: hsl(7, 100%, 93%);
-	--p-color-primary-050: hsl(7, 100%, 95%);
-	--p-color-primary-030: hsl(7, 100%, 98%);
+	// --p-color-primary-420: hsl(249, 47%, 20%);
+	// --p-color-primary-320: hsl(249, 47%, 68%); // Base
+	// --p-color-primary-220: hsl(249, 47%, 78%);
+	// --p-color-primary-120: hsl(249, 47%, 88%);
+	// --p-color-primary-070: hsl(249, 47%, 93%);
+	// --p-color-primary-050: hsl(249, 47%, 95%);
+	// --p-color-primary-030: hsl(249, 47%, 98%);
+	--p-color-primary-420: hsl(215, 90%, 43%);
+	--p-color-primary-320: hsl(215, 90%, 68%); // Base
+	--p-color-primary-220: hsl(215, 90%, 78%);
+	--p-color-primary-120: hsl(215, 90%, 88%);
+	--p-color-primary-070: hsl(215, 90%, 93%);
+	--p-color-primary-050: hsl(215, 90%, 95%);
+	--p-color-primary-030: hsl(215, 90%, 98%);
+	// --p-color-primary-420: hsl(7, 85%, 58%);
+	// --p-color-primary-320: hsl(7, 100%, 68%); // Base
+	// --p-color-primary-220: hsl(7, 100%, 78%);
+	// --p-color-primary-120: hsl(7, 100%, 88%);
+	// --p-color-primary-070: hsl(7, 100%, 93%);
+	// --p-color-primary-050: hsl(7, 100%, 95%);
+	// --p-color-primary-030: hsl(7, 100%, 98%);
 
 	--p-color-primary-320-a-010: hsla(7, 100%, 68%, 0.1);
 	--p-color-primary-320-a-035: hsla(7, 100%, 68%, 0.35);
