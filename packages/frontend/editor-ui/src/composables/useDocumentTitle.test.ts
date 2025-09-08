@@ -12,20 +12,20 @@ describe('useDocumentTitle', () => {
 	it('should set the document title', () => {
 		const { set } = useDocumentTitle();
 		set('Test Title');
-		expect(document.title).toBe('Test Title - AIOps');
+		expect(document.title).toBe('Test Title - Flohub');
 	});
 
 	it('should reset the document title', () => {
 		const { set, reset } = useDocumentTitle();
 		set('Test Title');
 		reset();
-		expect(document.title).toBe('Workflow Automation - AIOps');
+		expect(document.title).toBe('Workflow Automation - Flohub');
 	});
 
 	it('should use the correct prefix for the release channel', () => {
 		settings.releaseChannel = 'beta';
 		const { set } = useDocumentTitle();
 		set('Test Title');
-		expect(document.title).toBe('Test Title - AIOps[BETA]');
+		expect(document.title).toBe('Test Title - Flohub[BETA]');
 	});
 });
