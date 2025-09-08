@@ -2,17 +2,17 @@ name: Sync Public API Schema to Docs Repo
 
 on:
   # Triggers for the master branch if relevant Public API files have changed
-  push:
-    branches:
-      - master
-    paths:
+#  push:
+#    branches:
+#      - master
+#    paths:
       # Trigger if:
       # - any of the public API files change
-      - 'packages/cli/src/public-api/**/*.{css,yaml,yml}'
+#      - 'packages/cli/src/public-api/**/*.{css,yaml,yml}'
       # - the build script or dependencies change
-      - 'packages/cli/package.json'
+#      - 'packages/cli/package.json'
       # - any main dependencies change
-      - 'pnpm-lock.yaml'
+#      - 'pnpm-lock.yaml'
 
   # Allow manual trigger
   workflow_dispatch:
