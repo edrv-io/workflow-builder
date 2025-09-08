@@ -26,7 +26,7 @@ const workflowHistoryRoute = computed<{ name: string; params: { workflowId: stri
 
 <template>
 	<N8nTooltip placement="bottom">
-		<RouterLink :to="workflowHistoryRoute">
+		<!-- <RouterLink :to="workflowHistoryRoute">
 			<N8nIconButton
 				:disabled="isNewWorkflow || !isFeatureEnabled"
 				data-test-id="workflow-history-button"
@@ -34,7 +34,7 @@ const workflowHistoryRoute = computed<{ name: string; params: { workflowId: stri
 				icon="history"
 				size="medium"
 			/>
-		</RouterLink>
+		</RouterLink> -->
 		<template #content>
 			<span v-if="isFeatureEnabled && isNewWorkflow">
 				{{ locale.baseText('workflowHistory.button.tooltip.empty') }}

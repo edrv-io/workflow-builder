@@ -263,7 +263,7 @@ function hideGithubButton() {
 					:current-folder="parentFolderForBreadcrumbs"
 					:is-archived="workflow.isArchived"
 				/>
-				<div v-if="showGitHubButton" :class="[$style['github-button'], 'hidden-sm-and-down']">
+				<!-- <div v-if="showGitHubButton" :class="[$style['github-button'], 'hidden-sm-and-down']">
 					<div :class="$style['github-button-container']">
 						<GithubButton
 							:href="N8N_MAIN_GITHUB_REPO_URL"
@@ -281,7 +281,7 @@ function hideGithubButton() {
 							@click="hideGithubButton"
 						/>
 					</div>
-				</div>
+				</div> -->
 			</div>
 			<TabBar
 				v-if="onWorkflowPage"
