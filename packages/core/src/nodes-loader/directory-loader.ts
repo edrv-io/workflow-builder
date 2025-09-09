@@ -386,6 +386,12 @@ export abstract class DirectoryLoader {
 	}
 
 	private getIconPath(icon: string, filePath: string) {
+		if (this.packageName === 'CUSTOM') {
+			const relativePath = path.relative(this.directory, filePath);
+			const iconPath = path.join(path.dirname(relativePath), icon.replace('file:', ''));
+			return `icons/${this.packageName}/${iconPath}`;
+		}
+		
 		const iconPath = path.join(path.dirname(filePath), icon.replace('file:', ''));
 
 		if (!isContainedWithin(this.directory, path.join(this.directory, iconPath))) {
