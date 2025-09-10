@@ -301,8 +301,6 @@ export const NODE_CREATOR_OPEN_SOURCES: Record<
 	TEMPLATES_CALLOUT: 'templates_callout',
 	'': '',
 };
-export const YOUR_CUSTOM_CATEGORY = 'Your Custom Tools';
-export const YOUR_CUSTOM_SUBCATEGORY = 'yourCustomSubcategory';
 
 export const CORE_NODES_CATEGORY = 'Core Nodes';
 export const EDRV_NODES_CATEGORY = 'EDRV';
