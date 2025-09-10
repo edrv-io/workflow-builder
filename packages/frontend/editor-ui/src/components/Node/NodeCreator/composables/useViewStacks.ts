@@ -411,7 +411,7 @@ export const useViewStacks = defineStore('nodeCreatorViewStacks', () => {
 
 		if (!stack?.items) {
 			const subcategory = stack?.subcategory ?? DEFAULT_SUBCATEGORY;
-			let itemsInSubcategory = itemsBySubcategory.value[subcategory];
+			let itemsInSubcategory = itemsBySubcategory.value[subcategory] ?? [];
 
 			const isAskAiEnabled = settingsStore.isAskAiEnabled;
 			if (!isAskAiEnabled) {

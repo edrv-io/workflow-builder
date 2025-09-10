@@ -12,16 +12,26 @@ export interface Props {
 const props = defineProps<Props>();
 const i18n = useI18n();
 const subcategoryName = computed(() => camelCase(props.item.subcategory || props.item.title));
+
+const displayTitle = computed(() => {
+	const key = `nodeCreator.subcategoryNames.${subcategoryName.value}` as BaseTextKey;
+	const translated = i18n.baseText(key);
+	return translated === key ? props.item.title : translated;
+});
+
+const displayDescription = computed(() => {
+	const key = `nodeCreator.subcategoryDescriptions.${subcategoryName.value}` as BaseTextKey;
+	const translated = i18n.baseText(key);
+	return translated === key ? props.item.description || '' : translated;
+});
 </script>
 
 <template>
 	<n8n-node-creator-node
 		:class="$style.subCategory"
-		:title="i18n.baseText(`nodeCreator.subcategoryNames.${subcategoryName}` as BaseTextKey)"
+		:title="displayTitle"
 		:is-trigger="false"
-		:description="
-			i18n.baseText(`nodeCreator.subcategoryDescriptions.${subcategoryName}` as BaseTextKey)
-		"
+		:description="displayDescription"
 		:show-action-arrow="true"
 	>
 		<template #icon>
