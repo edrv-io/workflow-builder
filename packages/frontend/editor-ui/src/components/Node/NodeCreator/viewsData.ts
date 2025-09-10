@@ -58,6 +58,8 @@ import {
 	AI_WORKFLOW_TOOL_LANGCHAIN_NODE_TYPE,
 	HUMAN_IN_THE_LOOP_CATEGORY,
 	TEMPLATE_CATEGORY_AI,
+	EDRV_NODES_SUBCATEGORY,
+	EDRV_NODES_CATEGORY,
 } from '@/constants';
 import { useI18n } from '@n8n/i18n';
 import { useNodeTypesStore } from '@/stores/nodeTypes.store';
@@ -497,6 +499,7 @@ export function RegularView(nodes: SimplifiedNodeType[]) {
 		CODE_NODE_TYPE,
 		DATETIME_NODE_TYPE,
 		AI_TRANSFORM_NODE_TYPE,
+		EDRV_NODES_SUBCATEGORY,
 	];
 
 	const getSendAndWaitNodes = (nodes: SimplifiedNodeType[]) => {
@@ -509,6 +512,24 @@ export function RegularView(nodes: SimplifiedNodeType[]) {
 		value: REGULAR_NODE_CREATOR_VIEW,
 		title: i18n.baseText('nodeCreator.triggerHelperPanel.whatHappensNext'),
 		items: [
+			{
+				key: EDRV_NODES_SUBCATEGORY,
+				type: 'subcategory',
+				category: EDRV_NODES_CATEGORY,
+				properties: {
+					title: 'EV Charging',
+					description:
+						'Customized nodes for your EV Charging needs like CSMS, API, SIM provider payment terminals',
+					icon: 'bolt',
+					sections: [
+						{
+							key: 'popular',
+							title: 'Popular',
+							items: [],
+						},
+					],
+				},
+			},
 			{
 				key: DEFAULT_SUBCATEGORY,
 				type: 'subcategory',

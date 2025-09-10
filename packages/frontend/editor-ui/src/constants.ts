@@ -301,7 +301,10 @@ export const NODE_CREATOR_OPEN_SOURCES: Record<
 	TEMPLATES_CALLOUT: 'templates_callout',
 	'': '',
 };
+
 export const CORE_NODES_CATEGORY = 'Core Nodes';
+export const EDRV_NODES_CATEGORY = 'EDRV';
+export const EDRV_NODES_SUBCATEGORY = 'eDRV Nodes';
 export const HUMAN_IN_THE_LOOP_CATEGORY = 'HITL';
 export const CUSTOM_NODES_CATEGORY = 'Custom Nodes';
 export const DEFAULT_SUBCATEGORY = '*';

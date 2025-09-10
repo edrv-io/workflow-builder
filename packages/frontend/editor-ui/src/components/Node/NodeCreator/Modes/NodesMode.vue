@@ -119,12 +119,19 @@ function onSelected(item: INodeCreateElement) {
 
 	if (item.type === 'subcategory') {
 		const subcategoryKey = camelCase(item.properties.title);
-		const title = i18n.baseText(`nodeCreator.subcategoryNames.${subcategoryKey}` as BaseTextKey);
+		const i18nKey = `nodeCreator.subcategoryNames.${subcategoryKey}` as BaseTextKey;
+		const translatedTitle = i18n.baseText(i18nKey);
+		const title = translatedTitle === i18nKey ? item.properties.title : translatedTitle;
 
 		// If the info message exists in locale, add it to the info field of the view
 		const infoKey = `nodeCreator.subcategoryInfos.${subcategoryKey}` as BaseTextKey;
 		const info = i18n.baseText(infoKey);
 		const extendedInfo = info !== infoKey ? { info } : {};
+
+		// Add description if available in item properties
+		const description = item.properties.description
+			? { description: item.properties.description }
+			: {};
 		const nodeIcon = item.properties.icon
 			? ({ type: 'icon', name: item.properties.icon } as const)
 			: undefined;
@@ -135,6 +142,7 @@ function onSelected(item: INodeCreateElement) {
 			title,
 			nodeIcon,
 			...extendedInfo,
+			...description,
 			...(item.properties.panelClass ? { panelClass: item.properties.panelClass } : {}),
 			rootView: activeViewStack.value.rootView,
 			forceIncludeNodes: item.properties.forceIncludeNodes,

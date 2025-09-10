@@ -25,6 +25,7 @@ import {
 	HUMAN_IN_THE_LOOP_CATEGORY,
 	MICROSOFT_TEAMS_NODE_TYPE,
 	PRE_BUILT_AGENTS_COLLECTION,
+	EDRV_NODES_CATEGORY,
 } from '@/constants';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -69,6 +70,7 @@ export function subcategorizeItems(items: SimplifiedNodeType[]) {
 		CORE_NODES_CATEGORY,
 		AI_SUBCATEGORY,
 		HUMAN_IN_THE_LOOP_CATEGORY,
+		EDRV_NODES_CATEGORY,
 	];
 	return items.reduce((acc: SubcategorizedNodeTypes, item) => {
 		// Only some subcategories are allowed
