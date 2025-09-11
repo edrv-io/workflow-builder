@@ -229,7 +229,34 @@ export const RESPOND_TO_WEBHOOK_NODE_TYPE = 'n8n-nodes-base.respondToWebhook';
 export const DATA_STORE_NODE_TYPE = 'n8n-nodes-base.dataTable';
 export const DATA_STORE_TOOL_NODE_TYPE = 'n8n-nodes-base.dataTableTool';
 
-export const TELE2_SIM_NODE_TYPE = 'n8n-nodes-edrv-custom-nodes.tele2Sim';
+// edrv custom nodes
+// Error Codes
+export const ALFEN_ERROR_CODES_NODE_TYPE = 'CUSTOM.alfenErrorCodes';
+export const ALPITRONIC_ERROR_CODES_NODE_TYPE = 'CUSTOM.alpitronicErrorCodes';
+export const ZEROVA_ERROR_CODES_NODE_TYPE = 'CUSTOM.zerovaErrorCodes';
+
+// CSMS
+export const DRIIVZ_CSMS_NODE_TYPE = 'CUSTOM.driivzCsms';
+export const OCEAN_CSMS_NODE_TYPE = 'CUSTOM.oceanCsms';
+export const MONTA_CSMS_NODE_TYPE = 'CUSTOM.montaCsms';
+export const EDRV_CSMS_NODE_TYPE = 'CUSTOM.eDrvcsms';
+export const OCPP_16J_NODE_TYPE = 'CUSTOM.ocpp16j';
+
+// Payment Terminals
+export const NAYAX_LYNX_NODE_TYPE = 'CUSTOM.nayaxLynx';
+export const PAYTER_CPS_NODE_TYPE = 'CUSTOM.payterCps';
+
+// APIs / Integrations
+export const EDRV_API_NODE_TYPE = 'CUSTOM.eDrvApi';
+export const HTTP_BIN_NODE_TYPE = 'CUSTOM.httpBin';
+export const EXAMPLE_NODE_TYPE = 'CUSTOM.exampleNode';
+
+// SIM Providers
+export const KORE_SUPERSIM_NODE_TYPE = 'CUSTOM.koreSuperSim';
+export const TELE2_SIM_NODE_TYPE = 'CUSTOM.tele2Sim';
+
+// AI / Ops
+export const EDRV_AIOPS_NODE_TYPE = 'CUSTOM.eDrvaiOps';
 
 export const CREDENTIAL_ONLY_NODE_PREFIX = 'n8n-creds-base';
 export const CREDENTIAL_ONLY_HTTP_NODE_VERSION = 4.1;
