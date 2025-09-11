@@ -78,6 +78,10 @@ export function subcategorizeItems(items: SimplifiedNodeType[]) {
 
 		const matchedSubcategories = WHITE_LISTED_SUBCATEGORIES.flatMap((category) => {
 			if (item.codex?.categories?.includes(category)) {
+				// For EDRV category, look for subcategories under 'EDRV' key
+				if (category === EDRV_NODES_CATEGORY) {
+					return item.codex?.subcategories?.['EDRV'] ?? [];
+				}
 				return item.codex?.subcategories?.[category] ?? [];
 			}
 

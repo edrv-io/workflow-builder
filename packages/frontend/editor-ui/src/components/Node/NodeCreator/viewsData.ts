@@ -60,6 +60,8 @@ import {
 	TEMPLATE_CATEGORY_AI,
 	EDRV_NODES_SUBCATEGORY,
 	EDRV_NODES_CATEGORY,
+	AIRTABLE_TRIGGER_NODE_TYPE,
+	TELE2_SIM_NODE_TYPE,
 } from '@/constants';
 import { useI18n } from '@n8n/i18n';
 import { useNodeTypesStore } from '@/stores/nodeTypes.store';
@@ -499,7 +501,6 @@ export function RegularView(nodes: SimplifiedNodeType[]) {
 		CODE_NODE_TYPE,
 		DATETIME_NODE_TYPE,
 		AI_TRANSFORM_NODE_TYPE,
-		EDRV_NODES_SUBCATEGORY,
 	];
 
 	const getSendAndWaitNodes = (nodes: SimplifiedNodeType[]) => {
@@ -513,19 +514,25 @@ export function RegularView(nodes: SimplifiedNodeType[]) {
 		title: i18n.baseText('nodeCreator.triggerHelperPanel.whatHappensNext'),
 		items: [
 			{
-				key: EDRV_NODES_SUBCATEGORY,
+				key: 'ev-charging',
 				type: 'subcategory',
-				category: EDRV_NODES_CATEGORY,
+				category: CORE_NODES_CATEGORY,
 				properties: {
 					title: 'EV Charging',
-					description:
-						'Customized nodes for your EV Charging needs like CSMS, API, SIM provider payment terminals',
 					icon: 'bolt',
+					forceIncludeNodes: [
+						FILTER_NODE_TYPE,
+						IF_NODE_TYPE,
+						REMOVE_DUPLICATES_NODE_TYPE,
+						SPLIT_OUT_NODE_TYPE,
+						TELE2_SIM_NODE_TYPE,
+						'n8n-nodes-base.tele2Sim',
+					],
 					sections: [
 						{
 							key: 'popular',
-							title: 'Popular',
-							items: [],
+							title: i18n.baseText('nodeCreator.sectionNames.popular'),
+							items: ['filter', 'if', 'removeDuplicates', 'splitOut', 'webhook', 'tele2Sim'],
 						},
 					],
 				},
