@@ -229,6 +229,8 @@ export const RESPOND_TO_WEBHOOK_NODE_TYPE = 'n8n-nodes-base.respondToWebhook';
 export const DATA_STORE_NODE_TYPE = 'n8n-nodes-base.dataTable';
 export const DATA_STORE_TOOL_NODE_TYPE = 'n8n-nodes-base.dataTableTool';
 
+export const TELE2_SIM_NODE_TYPE = 'n8n-nodes-edrv-custom-nodes.tele2Sim';
+
 export const CREDENTIAL_ONLY_NODE_PREFIX = 'n8n-creds-base';
 export const CREDENTIAL_ONLY_HTTP_NODE_VERSION = 4.1;
 
@@ -304,7 +306,7 @@ export const NODE_CREATOR_OPEN_SOURCES: Record<
 
 export const CORE_NODES_CATEGORY = 'Core Nodes';
 export const EDRV_NODES_CATEGORY = 'EDRV';
-export const EDRV_NODES_SUBCATEGORY = 'eDRV Nodes';
+export const EDRV_NODES_SUBCATEGORY = 'EV Charging';
 export const HUMAN_IN_THE_LOOP_CATEGORY = 'HITL';
 export const CUSTOM_NODES_CATEGORY = 'Custom Nodes';
 export const DEFAULT_SUBCATEGORY = '*';
